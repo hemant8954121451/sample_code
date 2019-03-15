@@ -1,0 +1,22 @@
+.main_div{
+    background-color: rgb(232, 232, 235);
+    border-radius: 25px;
+    padding: 30px;
+    height: 300px;
+    width: 22%;
+    position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+  	
+	margin: auto;
+}
+
+.myButton{
+    width: 30%;
+    margin-top:-15px;
+    font-size:15px;
+    border-radius:18px;
+    background-color:green;
+}
