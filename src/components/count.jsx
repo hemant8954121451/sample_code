@@ -1,5 +1,6 @@
 import React , {Component}  from 'react'
 import  '../css/count.css'
+import {GetData} from './child'
 class Count extends Component{
     constructor(props){
         super(props)
@@ -18,15 +19,21 @@ class Count extends Component{
     handleSubmit(e){
         e.preventDefault();
         const getAddData = this.state.text;
-        console.log('=======',getAddData)
-        this.setState({addData: getAddData})
-        //    const data = getAddData.map((obj)=>{
-        //     return <li  style={{color:"white",float:"right",marginTop:"10px",padding:"30px 20px 50px 25px",borderRadius: "12px",width:'200px',backgroundColor:"#4b286d"}} >{obj.data}<span style={{display: "block",marginTop: "21px",color: "gray"}}> {obj.time}</span></li>
-        // })
+       const addData = [...this.state.addData]
+
+        addData.push(getAddData)
+        console.log("========================")
+        console.log("state add data",this.state.addData)
+        console.log("add data current push",addData)
+        console.log("------------------------------")
+        this.setState({addData: addData})
+       
+    //    this.setState({addData: addData},()=>{
+    //        console.log(this.state.addData)
+    //    })
+
     }
-    // handleSubmit: function(){
-    //     console.log("values" + this.state.text);
-    // }
+   
     render(){
         return[
             <div>To do Task</div> , <hr/>,
@@ -38,12 +45,13 @@ class Count extends Component{
                             name="title"  
                             placeholder = "Enter text value" 
                             value={this.state.text} />
+                            <GetData addData={this.state.addData} />
+                        
                         <button type= "submit" className ="myButton" >Add </button>
-                        <ul class="chat" style={{listStyleType:'none'}}>
-                        <getData childProps={getAddData} />
-                        </ul>
+                        
                     </form>
                 </div>
+                
         ];
     }
 }

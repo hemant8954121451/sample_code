@@ -14,9 +14,9 @@
 }
 
 .myButton{
-    width: 30%;
+    width: 35%;
     margin-top:-15px;
     font-size:15px;
-    border-radius:18px;
+    border-radius:6px;
     background-color:green;
 }
